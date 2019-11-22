@@ -1,0 +1,8 @@
+fsl_tsi_v4.c:87:6:TSI_Deinit	0	static
+fsl_tsi_v4.c:97:6:TSI_GetNormalModeDefaultConfig	0	static
+fsl_tsi_v4.c:109:6:TSI_GetLowPowerModeDefaultConfig	0	static
+fsl_tsi_v4.c:149:6:TSI_EnableInterrupts	0	static
+fsl_tsi_v4.c:169:6:TSI_DisableInterrupts	8	static
+fsl_tsi_v4.c:32:6:TSI_Init	16	static
+fsl_tsi_v4.c:189:6:TSI_ClearStatusFlags	0	static
+fsl_tsi_v4.c:121:6:TSI_Calibrate	24	static

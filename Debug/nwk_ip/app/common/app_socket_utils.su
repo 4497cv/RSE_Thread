@@ -1,0 +1,8 @@
+app_socket_utils.c:124:6:APP_SocketClientRxCallback	56	static
+app_socket_utils.c:232:13:App_SocketOpenBind	56	static
+app_socket_utils.c:327:13:App_SocketClose	16	static
+app_socket_utils.c:397:13:App_SocketConnect	24	static
+app_socket_utils.c:372:13:App_SocketSend	8	static
+app_socket_utils.c:170:13:App_SocketHandleSendAsync	8	static
+app_socket_utils.c:94:6:APP_InitUserSockets	0	static
+app_socket_utils.c:148:8:App_SocketSendAsync	8	static

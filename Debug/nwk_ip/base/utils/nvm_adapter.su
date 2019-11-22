@@ -1,0 +1,8 @@
+nvm_adapter.c:112:15:NVNG_Init	8	static
+nvm_adapter.c:153:15:NVNG_ThreadRestore	64	static
+nvm_adapter.c:250:6:NVNG_MoveToRam	8	static
+nvm_adapter.c:275:6:NVNG_Save	8	static
+nvm_adapter.c:322:6:NVNG_SaveOnInterval	8	static
+nvm_adapter.c:372:6:NVNG_Erase	8	static
+nvm_adapter.c:299:6:NVNG_SyncSave	8	static
+nvm_adapter.c:348:6:NVNG_RestoreDataset	8	static

@@ -1,0 +1,4 @@
+shell_autocomplete.c:150:16:find_common_prefix	24	static
+shell_autocomplete.c:107:13:print_argv	48	static
+shell_autocomplete.c:45:15:complete_cmdv	56	static
+shell_autocomplete.c:198:8:cmd_auto_complete	192	static

@@ -1,0 +1,12 @@
+fsl_adc16.c:57:17:ADC16_GetInstance	8	static
+fsl_adc16.c:75:6:ADC16_Init	16	static
+fsl_adc16.c:131:6:ADC16_Deinit	8	static
+fsl_adc16.c:139:6:ADC16_GetDefaultConfig	8	static
+fsl_adc16.c:213:6:ADC16_SetChannelMuxMode	0	static
+fsl_adc16.c:226:6:ADC16_SetHardwareCompareConfig	8	static
+fsl_adc16.c:263:6:ADC16_SetHardwareAverage	0	static
+fsl_adc16.c:310:10:ADC16_GetStatusFlags	0	static
+fsl_adc16.c:327:6:ADC16_ClearStatusFlags	0	static
+fsl_adc16.c:337:6:ADC16_SetChannelConfig	8	static
+fsl_adc16.c:359:10:ADC16_GetChannelStatusFlags	8	static
+fsl_adc16.c:155:10:ADC16_DoAutoCalibration	24	static

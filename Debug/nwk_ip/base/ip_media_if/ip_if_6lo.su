@@ -1,0 +1,9 @@
+ip_if_6lo.c:194:6:IP_6LowPanDataCnf	0	static
+ip_if_6lo.c:270:10:IP_6LowPanClose	0	static
+ip_if_6lo.c:475:10:IP_6LowPanJoin	0	static
+ip_if_6lo.c:494:10:IP_6LowPanLeave	0	static
+ip_if_6lo.c:139:6:IP_6LowPanRecv	24	static
+ip_if_6lo.c:215:10:IP_6LowPanOpen	24	static
+ip_if_6lo.c:445:10:IP_6LowPanGetIID	16	static
+ip_if_6lo.c:78:6:IP_6LowPanMergeNwkBuff	32	static
+ip_if_6lo.c:309:10:IP_6LowPanSend	72	static

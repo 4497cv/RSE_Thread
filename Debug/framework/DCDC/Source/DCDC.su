@@ -1,0 +1,10 @@
+DCDC.c:605:8:DCDC_Init	0	static
+DCDC.c:712:8:DCDC_SetOutputVoltageTargets	0	static
+DCDC.c:799:10:DCDC_McuVOutputTargetTomV	0	static
+DCDC.c:812:10:DCDC_1P8OutputTargetTomV	0	static
+DCDC.c:837:8:DCDC_PrepareForPulsedMode	0	static
+DCDC.c:867:8:DCDC_PrepareForContinuousMode	0	static
+DCDC.c:896:8:DCDC_SetUpperLimitDutyCycle	0	static
+DCDC.c:933:8:DCDC_GetPowerSwitchStatus	0	static
+DCDC.c:964:6:DCDC_ShutDown	0	static
+DCDC.c:991:8:DCDC_InstallPSwitchCallback	0	static

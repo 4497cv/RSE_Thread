@@ -1,0 +1,15 @@
+Keyboard.c:1095:13:TsiSwTriggerCallback	8	static
+Keyboard.c:354:13:KbGpioInit	8	static
+Keyboard.c:376:13:KbTsiInit	32	static
+Keyboard.c:1111:6:KBD_TSI_IrqHandler	8	static
+Keyboard.c:470:21:KBD_KeySwitchPortGet	16	static
+Keyboard.c:524:15:KBD_KeyCheck	16	static
+Keyboard.c:603:13:KeyScan	16	static
+Keyboard.c:856:15:Switch_CheckIRQ	8	static
+Keyboard.c:1064:6:Switch_Press_ISR	16	static
+Keyboard.c:433:6:KBD_Deinit	8	static
+Keyboard.c:885:6:KBD_Init	48	static
+Keyboard.c:969:8:KBD_IsWakeUpSource	8	static
+Keyboard.c:997:6:KBD_PrepareEnterLowPower	8	static
+Keyboard.c:1022:6:KBD_PrepareExitLowPower	16	static
+Keyboard.c:1043:6:KBD_SwitchPressedOnWakeUp	8	static

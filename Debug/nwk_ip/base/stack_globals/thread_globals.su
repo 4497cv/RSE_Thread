@@ -1,0 +1,14 @@
+thread_globals.c:309:6:THR_SetThrRouterSelJitterSec	8	static
+thread_globals.c:327:6:THR_GetDefaultDeviceConfig	8	static
+thread_globals.c:348:6:THR_SetDefaultDeviceConfig	8	static
+thread_globals.c:369:6:THR_SetSlaacManualIID	8	static
+thread_globals.c:384:10:THR_GetNwkDataMinStableLifetime	0	static
+thread_globals.c:398:6:THR_SetNetworkIdTimeoutSec	0	static
+thread_globals.c:414:6:THR_SetContextReuseDelaySec	0	static
+thread_globals.c:430:6:THR_SetMaxAllowedRouters	0	static
+thread_globals.c:447:6:THR_SetMinDowngradNeigbors	0	static
+thread_globals.c:464:6:THR_SetRouterDowngradeThreshold	0	static
+thread_globals.c:479:10:THR_GetRouterDowngradeThreshold	0	static
+thread_globals.c:493:6:THR_SetRouterUpgradeThreshold	0	static
+thread_globals.c:508:10:THR_GetRouterUpgradeThreshold	0	static
+thread_globals.c:522:6:THR_SetParentPriority	0	static

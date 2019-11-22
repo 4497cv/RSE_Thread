@@ -1,0 +1,3 @@
+shell_cmdhelp.c:197:15:DoHelpComplete	32	static
+shell_cmdhelp.c:85:15:DoVer	8	static
+shell_cmdhelp.c:116:15:DoHelp	32	static

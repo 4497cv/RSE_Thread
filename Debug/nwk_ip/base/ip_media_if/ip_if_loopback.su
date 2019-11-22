@@ -1,0 +1,6 @@
+ip_if_loopback.c:137:10:IP_LoopbackArpSend	0	static
+ip_if_loopback.c:229:10:IP_LoopbackJoin	0	static
+ip_if_loopback.c:248:10:IP_LoopbackLeave	0	static
+ip_if_loopback.c:86:10:IP_LoopbackOpen	8	static
+ip_if_loopback.c:157:10:IP_LoopbackSend	16	static
+ip_if_loopback.c:205:10:IP_LoopbackGetIID	8	static

@@ -1,0 +1,10 @@
+fsl_xcvr_trim.c:311:7:calc_dcoc_dac_step	16	static
+fsl_xcvr_trim.c:334:6:XcvrCalDelay	0	static
+fsl_xcvr_trim.c:349:6:rx_dc_sample_average	40	static
+fsl_xcvr_trim.c:267:6:DC_Measure_short	24	static
+fsl_xcvr_trim.c:81:9:rx_bba_dcoc_dac_trim_shortIQ	104	static
+fsl_xcvr_trim.c:421:6:rx_dc_sample_average_long	40	static
+fsl_xcvr_trim.c:491:6:rx_dc_est_average	40	static
+fsl_xcvr_trim.c:541:9:rx_bba_dcoc_dac_trim_DCest	112	static
+fsl_xcvr_trim.c:740:6:DCOC_DAC_INIT_Cal	112	static
+fsl_xcvr_trim.c:976:6:force_rx_init_pulse	0	static

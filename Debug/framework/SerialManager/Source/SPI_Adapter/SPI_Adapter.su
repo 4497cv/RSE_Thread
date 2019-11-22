@@ -1,0 +1,13 @@
+SPI_Adapter.c:757:13:Spi_WriteData	0	static
+SPI_Adapter.c:782:15:Spi_SlaveTransmitCompleted	0	static
+SPI_Adapter.c:810:13:Spi_FillTxFifoSlave	0	static
+SPI_Adapter.c:882:17:Spi_ReadData	0	static
+SPI_Adapter.c:900:15:Spi_IsMaster	0	static
+SPI_Adapter.c:107:13:Spi_Init	32	static
+SPI_Adapter.c:916:13:Spi_SetIntState	8	static
+SPI_Adapter.c:615:13:SPIx_ISR	16	static
+SPI_Adapter.c:150:13:Spi_Configure	72	static
+SPI_Adapter.c:297:13:Spi_SyncTransfer	40	static
+SPI_Adapter.c:390:13:Spi_AsyncTransfer	32	static
+SPI_Adapter.c:527:13:Spi_AsyncTransferSlave	32	static
+SPI_Adapter.c:577:13:Spi_SendDummyByte	16	static

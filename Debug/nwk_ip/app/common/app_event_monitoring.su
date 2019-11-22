@@ -1,0 +1,6 @@
+app_event_monitoring.c:291:13:App_EventNwkScanGetPayload	24	static
+app_event_monitoring.c:273:13:App_EventMonitorGetPayload	8	static
+app_event_monitoring.c:88:6:APP_EventMonitor_Handler	24	static
+app_event_monitoring.c:164:8:APP_EventMonitorRegister	20	static
+app_event_monitoring.c:212:8:APP_EventMonitorUnregister	16	static
+app_event_monitoring.c:240:6:APP_InitEventMonitor	16	static

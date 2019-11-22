@@ -1,0 +1,8 @@
+ifr_radio.c:216:10:read_resource_ifr	8	static
+ifr_radio.c:136:10:read_another_ifr_word	8	static
+ifr_radio.c:119:10:read_first_ifr_word	8	static
+ifr_radio.c:318:6:store_sw_trim	16	static
+ifr_radio.c:347:6:handle_ifr	16	static
+ifr_radio.c:455:10:handle_ifr_die_id	8	static
+ifr_radio.c:467:10:handle_ifr_die_kw_type	8	static
+ifr_radio.c:489:6:dump_ifr	16	static

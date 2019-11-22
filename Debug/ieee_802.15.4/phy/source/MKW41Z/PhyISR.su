@@ -1,0 +1,15 @@
+PhyISR.c:125:13:PhyIsrSeqCleanup	0	static
+PhyISR.c:157:13:PhyIsrTimeoutCleanup	0	static
+PhyISR.c:586:16:Phy_LqiConvert	8	static
+PhyISR.c:565:13:Phy_GetRxParams	16	static
+PhyISR.c:267:6:PHY_InterruptHandler	16	static
+PhyISR.c:72:6:ProtectFromXcvrInterrupt	8	static
+PhyISR.c:90:6:UnprotectFromXcvrInterrupt	8	static
+PhyISR.c:113:6:PhyIsrPassRxParams	0	static
+PhyISR.c:193:9:Phy_GetEnergyLevel	8	static
+PhyISR.c:223:9:PhyGetLastRxLqiValue	0	static
+PhyISR.c:234:9:PhyGetLastRxRssiValue	0	static
+PhyISR.c:256:8:PhyConvertLQIToRSSI	8	static
+PhyISR.c:487:6:PHY_InstallIsr	8	static
+PhyISR.c:504:6:PHY_ForceIrqPending	0	static
+PhyISR.c:515:8:PHY_isIrqPending	0	static

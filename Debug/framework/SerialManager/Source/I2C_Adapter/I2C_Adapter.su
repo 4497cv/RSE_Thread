@@ -1,0 +1,9 @@
+I2C_Adapter.c:278:13:I2C_ISR	16	static
+I2C_Adapter.c:44:10:I2C_Initialize	32	static
+I2C_Adapter.c:90:10:I2C_InstallRxCalback	0	static
+I2C_Adapter.c:108:10:I2C_InstallTxCalback	0	static
+I2C_Adapter.c:126:10:I2C_MasterSetSpeed	16	static
+I2C_Adapter.c:143:10:I2C_MasterSend	24	static
+I2C_Adapter.c:178:10:I2C_MasterReceive	24	static
+I2C_Adapter.c:215:10:I2C_SlaveSend	16	static
+I2C_Adapter.c:244:10:I2C_SlaveReceive	16	static

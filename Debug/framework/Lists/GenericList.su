@@ -1,0 +1,13 @@
+GenericList.c:42:6:ListInit	0	static
+GenericList.c:65:14:ListGetList	0	static
+GenericList.c:86:14:ListAddTail	16	static
+GenericList.c:130:14:ListAddHead	16	static
+GenericList.c:173:21:ListRemoveHead	16	static
+GenericList.c:217:21:ListGetHead	0	static
+GenericList.c:237:21:ListGetNext	0	static
+GenericList.c:257:21:ListGetPrev	0	static
+GenericList.c:277:14:ListRemoveElement	8	static
+GenericList.c:327:14:ListAddPrevElement	16	static
+GenericList.c:373:10:ListGetSize	0	static
+GenericList.c:392:10:ListGetAvailable	0	static
+GenericList.c:556:14:ListTest	0	static

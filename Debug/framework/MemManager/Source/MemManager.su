@@ -1,0 +1,6 @@
+MemManager.c:127:13:MEM_Init	32	static
+MemManager.c:211:10:MEM_GetAvailableBlocks	16	static
+MemManager.c:260:7:MEM_BufferAllocWithId	16	static
+MemManager.c:367:13:MEM_BufferFree	16	static
+MemManager.c:463:10:MEM_BufferGetSize	0	static
+MemManager.c:734:10:MEM_WriteReadTest	32	static

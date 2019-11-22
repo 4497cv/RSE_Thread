@@ -1,0 +1,6 @@
+app_init.c:358:13:KBD_Callback	8	static
+app_init.c:375:13:APP_HandleMcuResetOnIdle	8	static
+app_init.c:193:6:main_task	8	static
+app_init.c:306:6:APP_ResetMcuOnTimeout	16	static
+app_init.c:318:10:APP_GetResetMcuTimeout	16	static
+app_init.c:337:6:APP_CriticalExitCb	8	static

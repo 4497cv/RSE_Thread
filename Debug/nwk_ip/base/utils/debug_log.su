@@ -1,0 +1,5 @@
+debug_log.c:462:6:HardFault_Handler	0	static
+debug_log.c:501:6:DBG_CheckIP6Addresses	0	static
+debug_log.c:551:6:DBG_CheckRestoreLeaderLed	16	static
+debug_log.c:570:6:DBG_Check	0	static
+debug_log.c:580:6:DBG_NVM	0	static
