@@ -1,0 +1,7 @@
+ip_if_enet.c:415:10:IP_EnetClose	0	static
+ip_if_enet.c:145:6:IP_EnetRecv	56	static
+ip_if_enet.c:624:10:IP_EnetJoin	24	static
+ip_if_enet.c:655:10:IP_EnetLeave	24	static
+ip_if_enet.c:250:10:IP_EnetOpen6	24	static
+ip_if_enet.c:360:10:IP_EnetOpen	8	static
+ip_if_enet.c:318:10:IP_EnetSendCommon	16	static

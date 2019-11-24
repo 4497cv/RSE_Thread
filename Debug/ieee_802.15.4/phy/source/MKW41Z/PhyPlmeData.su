@@ -1,0 +1,10 @@
+PhyPlmeData.c:81:13:PhyPdDataRequest	16	static
+PhyPlmeData.c:191:13:PhyPlmeRxRequest	32	static
+PhyPlmeData.c:711:13:PhyRxRetry	24	static
+PhyPlmeData.c:281:13:PhyPlmeCcaEdRequest	16	static
+PhyPlmeData.c:395:9:PhyPlmeGetCurrentChannelRequest	0	static
+PhyPlmeData.c:422:13:PhyPlmeSetPwrLevelRequest	0	static
+PhyPlmeData.c:463:9:PhyPlmeGetPwrLevelRequest	0	static
+PhyPlmeData.c:353:13:PhyPlmeSetCurrentChannelRequest	8	static
+PhyPlmeData.c:486:13:PhyPlmeSetPIBRequest	24	static
+PhyPlmeData.c:591:13:PhyPlmeGetPIBRequest	24	static

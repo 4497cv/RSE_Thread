@@ -1,0 +1,8 @@
+app_thread_init.c:156:6:THR_Task	56	static
+app_thread_init.c:106:6:THR_Init	16	static
+app_thread_init.c:252:17:Ip_TaskMsgQueueInit	8	static
+app_thread_init.c:290:17:SLWP_TaskMsgQueueInit	8	static
+app_thread_init.c:322:6:THR_TimeoutResetMcu	8	static
+app_thread_init.c:304:6:THR_FactoryReset	8	static
+app_thread_init.c:336:10:THR_GenerateExtendedAddress	128	static
+app_thread_init.c:406:6:THR_GetUniqueId	8	static

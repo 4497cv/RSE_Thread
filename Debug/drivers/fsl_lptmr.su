@@ -1,0 +1,4 @@
+fsl_lptmr.c:65:17:LPTMR_GetInstance	8	static
+fsl_lptmr.c:83:6:LPTMR_Init	16	static
+fsl_lptmr.c:108:6:LPTMR_Deinit	8	static
+fsl_lptmr.c:125:6:LPTMR_GetDefaultConfig	8	static

@@ -1,0 +1,11 @@
+TMR_Adapter.c:74:6:StackTimer_Init	16	static
+TMR_Adapter.c:113:6:StackTimer_Enable	0	static
+TMR_Adapter.c:123:6:StackTimer_Disable	0	static
+TMR_Adapter.c:133:10:StackTimer_GetInputFrequency	8	static
+TMR_Adapter.c:148:10:StackTimer_GetCounterValue	0	static
+TMR_Adapter.c:158:6:StackTimer_SetOffsetTicks	8	static
+TMR_Adapter.c:168:6:StackTimer_ClearIntFlag	0	static
+TMR_Adapter.c:182:6:PWM_Init	24	static
+TMR_Adapter.c:200:6:PWM_SetChnCountVal	0	static
+TMR_Adapter.c:210:10:PWM_GetChnCountVal	0	static
+TMR_Adapter.c:220:6:PWM_StartEdgeAlignedLowTrue	32	static

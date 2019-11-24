@@ -1,0 +1,7 @@
+pin_mux.c:39:6:BOARD_InitPins	0	static
+pin_mux.c:62:6:BOARD_InitButtons	0	static
+pin_mux.c:94:6:BOARD_InitLEDs	0	static
+pin_mux.c:129:6:BOARD_InitRGB	0	static
+pin_mux.c:166:6:BOARD_InitSPI	0	static
+pin_mux.c:196:6:BOARD_InitLPUART	0	static
+pin_mux.c:236:6:BOARD_InitI2C	12	static

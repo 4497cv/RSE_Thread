@@ -1,0 +1,7 @@
+FsciMacCommands.c:113:6:fsciRegisterMac	0	static
+FsciMacCommands.c:165:6:fsciRegisterMacToHost	0	static
+FsciMacCommands.c:203:6:MAC_Monitor	0	static
+FsciMacCommands.c:2481:14:fsciGetMacInstanceId	0	static
+FsciMacCommands.c:2513:10:fsciGetMacInterfaceId	0	static
+FsciMacCommands.c:2537:14:fsciHostGetMacInstanceId	0	static
+FsciMacCommands.c:2568:10:fsciHostGetMacInterfaceId	0	static

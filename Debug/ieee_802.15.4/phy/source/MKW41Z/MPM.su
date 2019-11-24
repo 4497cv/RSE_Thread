@@ -1,0 +1,2 @@
+MPM.c:406:13:MPM_AcquirePAN	0	static
+MPM.c:441:13:MPM_ReleasePAN	0	static

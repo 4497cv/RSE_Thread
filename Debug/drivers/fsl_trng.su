@@ -1,0 +1,9 @@
+fsl_trng.c:1293:17:trng_SetRetryCount	0	static
+fsl_trng.c:1316:17:trng_SetStatisticalCheckLimit	16	static
+fsl_trng.c:1452:17:trng_ApplyUserConfig	16	static
+fsl_trng.c:1495:17:trng_ReadEntropy	0	static
+fsl_trng.c:1215:17:trng_GetInstance	8	static
+fsl_trng.c:1239:10:TRNG_GetDefaultConfig	0	static
+fsl_trng.c:1515:10:TRNG_Init	16	static
+fsl_trng.c:1559:6:TRNG_Deinit	8	static
+fsl_trng.c:1584:10:TRNG_GetRandomData	32	static

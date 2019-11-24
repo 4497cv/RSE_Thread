@@ -1,0 +1,4 @@
+thread_globals.c:327:6:THR_GetDefaultDeviceConfig	8	static
+thread_globals.c:348:6:THR_SetDefaultDeviceConfig	8	static
+thread_globals.c:369:6:THR_SetSlaacManualIID	8	static
+thread_globals.c:384:10:THR_GetNwkDataMinStableLifetime	0	static

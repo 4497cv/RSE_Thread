@@ -1,0 +1,2 @@
+dbg_ram_capture.c:34:6:dbg_ram_init	0	static
+dbg_ram_capture.c:43:16:dbg_ram_capture	12	static

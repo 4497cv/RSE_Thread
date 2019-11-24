@@ -1,0 +1,8 @@
+clock_config.c:74:13:CLOCK_CONFIG_FllStableDelay	0	static
+clock_config.c:89:13:CLOCK_CONFIG_SetRtcClock	0	static
+clock_config.c:112:13:CLOCK_CONFIG_EnableRtcOsc	0	static
+clock_config.c:132:6:BOARD_RfOscInit	12	static
+clock_config.c:175:6:BOARD_InitOsc0	16	static
+clock_config.c:191:6:BOARD_InitBootClocks	0	static
+clock_config.c:256:6:BOARD_BootClockRUN	16	static
+clock_config.c:334:6:BOARD_BootClockVLPR	8	static

@@ -1,0 +1,10 @@
+fsl_rtc.c:75:13:RTC_CheckDatetimeFormat	32	static
+fsl_rtc.c:107:17:RTC_ConvertDatetimeToSeconds	48	static
+fsl_rtc.c:137:13:RTC_ConvertSecondsToDatetime	32	static
+fsl_rtc.c:208:6:RTC_Init	16	static
+fsl_rtc.c:239:6:RTC_GetDefaultConfig	8	static
+fsl_rtc.c:255:10:RTC_SetDatetime	16	static
+fsl_rtc.c:271:6:RTC_GetDatetime	8	static
+fsl_rtc.c:281:10:RTC_SetAlarm	16	static
+fsl_rtc.c:311:6:RTC_GetAlarm	8	static
+fsl_rtc.c:323:6:RTC_ClearStatusFlags	0	static

@@ -1,0 +1,8 @@
+RNG.c:381:13:TRNG_ISR	0	static
+RNG.c:97:9:RNG_Init	96	static
+RNG.c:181:9:RNG_HwGetRandomNo	8	static
+RNG.c:231:6:RNG_GetRandomNo	16	static
+RNG.c:249:6:RNG_SetPseudoRandomNoSeed	8	static
+RNG.c:279:9:RNG_GetPseudoRandomNo	120	static
+RNG.c:347:10:RND_u32GetRand256	16	static
+RNG.c:365:10:RND_u32GetRand	24	static

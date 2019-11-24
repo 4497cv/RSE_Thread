@@ -1,0 +1,16 @@
+MWS.c:216:13:MWS_Register	0	static
+MWS.c:258:10:MWS_GetInactivityDuration	0	static
+MWS.c:289:13:MWS_Acquire	0	static
+MWS.c:340:13:MWS_Release	0	static
+MWS.c:380:13:MWS_Abort	0	static
+MWS.c:404:16:MWS_GetActiveProtocol	0	static
+MWS.c:422:13:MWS_SignalIdle	0	static
+MWS.c:461:13:MWS_CoexistenceInit	0	static
+MWS.c:519:6:MWS_CoexistenceEnable	0	static
+MWS.c:532:6:MWS_CoexistenceDisable	0	static
+MWS.c:553:13:MWS_CoexistenceRegister	0	static
+MWS.c:596:9:MWS_CoexistenceDenyState	0	static
+MWS.c:618:6:MWS_CoexistenceSetPriority	0	static
+MWS.c:653:13:MWS_CoexistenceRequestAccess	0	static
+MWS.c:745:13:MWS_CoexistenceChangeAccess	0	static
+MWS.c:784:6:MWS_CoexistenceReleaseAccess	0	static

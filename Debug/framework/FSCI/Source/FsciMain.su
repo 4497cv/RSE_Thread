@@ -1,0 +1,2 @@
+FsciMain.c:132:15:FSCI_Monitor	0	static
+FsciMain.c:230:15:FSCI_RegisterOpGroup	0	static

@@ -1,0 +1,5 @@
+shell_cmdhist.c:166:15:DoHist	16	static
+shell_cmdhist.c:71:6:hist_init	8	static
+shell_cmdhist.c:90:6:hist_add	8	static
+shell_cmdhist.c:108:8:hist_next	0	static
+shell_cmdhist.c:133:8:hist_prev	0	static

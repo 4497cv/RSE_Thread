@@ -1,0 +1,13 @@
+Flash_Adapter.c:202:17:NV_ComputeCrcOverHWParameters	8	static
+Flash_Adapter.c:179:16:NV_VerifyCrcOverHWParameters	8	static
+Flash_Adapter.c:240:6:NV_Init	8	static
+Flash_Adapter.c:87:13:NV_Flash_WaitForCSEndAndDisableInterrupts	8	static
+Flash_Adapter.c:136:17:NV_FlashProgramAdaptation	32	static
+Flash_Adapter.c:268:6:NV_Flash_SetCriticalSection	8	static
+Flash_Adapter.c:287:6:NV_Flash_ClearCriticalSection	8	static
+Flash_Adapter.c:328:10:NV_FlashVerifyErase	16	static
+Flash_Adapter.c:352:10:NV_FlashProgram	8	static
+Flash_Adapter.c:371:10:NV_FlashProgramUnaligned	32	static
+Flash_Adapter.c:439:10:NV_FlashEraseSector	16	static
+Flash_Adapter.c:460:10:NV_ReadHWParameters	8	static
+Flash_Adapter.c:492:10:NV_WriteHWParameters	16	static
