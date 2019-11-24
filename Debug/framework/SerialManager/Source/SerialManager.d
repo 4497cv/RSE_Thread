@@ -1,7 +1,7 @@
 framework/SerialManager/Source/SerialManager.o \
  framework/SerialManager/Source/SerialManager.d: \
  ../framework/SerialManager/Source/SerialManager.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -24,7 +24,7 @@ framework/SerialManager/Source/SerialManager.o \
  ../board/pin_mux.h ../framework/NVM/Interface/NVM_Interface.h \
  ../framework/SerialManager/Source/UART_Adapter/UART_Adapter.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

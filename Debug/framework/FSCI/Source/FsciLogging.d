@@ -1,6 +1,6 @@
 framework/FSCI/Source/FsciLogging.o framework/FSCI/Source/FsciLogging.d: \
  ../framework/FSCI/Source/FsciLogging.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -19,7 +19,7 @@ framework/FSCI/Source/FsciLogging.o framework/FSCI/Source/FsciLogging.d: \
  ../framework/MemManager/Interface/MemManager.h \
  ../framework/Lists/GenericList.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

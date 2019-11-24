@@ -1,6 +1,6 @@
 nwk_ip/base/shell/shell_ip.o nwk_ip/base/shell/shell_ip.d: \
  ../nwk_ip/base/shell/shell_ip.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -84,7 +84,7 @@ nwk_ip/base/shell/shell_ip.o nwk_ip/base/shell/shell_ip.d: \
  ../nwk_ip/core/interface/modules/dns_utils.h \
  ../nwk_ip/core/interface/thread/thread_dns.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

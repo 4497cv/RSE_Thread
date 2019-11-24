@@ -1,7 +1,7 @@
 ieee_802.15.4/mac/source/App/FsciAspCommands.o \
  ieee_802.15.4/mac/source/App/FsciAspCommands.d: \
  ../ieee_802.15.4/mac/source/App/FsciAspCommands.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -20,7 +20,7 @@ ieee_802.15.4/mac/source/App/FsciAspCommands.o \
  ../ieee_802.15.4/phy/interface/PhyMessages.h \
  ../framework/Messaging/Interface/Messaging.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

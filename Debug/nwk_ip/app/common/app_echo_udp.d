@@ -1,6 +1,6 @@
 nwk_ip/app/common/app_echo_udp.o nwk_ip/app/common/app_echo_udp.d: \
  ../nwk_ip/app/common/app_echo_udp.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -50,7 +50,7 @@ nwk_ip/app/common/app_echo_udp.o nwk_ip/app/common/app_echo_udp.d: \
  ../framework/Shell/Interface/shell_config.h \
  ../framework/SerialManager/Interface/SerialManager.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

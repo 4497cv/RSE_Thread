@@ -1,7 +1,7 @@
 framework/NVM/Source/NV_FsciCommands.o \
  framework/NVM/Source/NV_FsciCommands.d: \
  ../framework/NVM/Source/NV_FsciCommands.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -15,7 +15,7 @@ framework/NVM/Source/NV_FsciCommands.o \
  ../framework/FunctionLib/FunctionLib.h \
  ../framework/NVM/Interface/NVM_Interface.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

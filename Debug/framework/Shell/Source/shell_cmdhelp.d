@@ -1,7 +1,7 @@
 framework/Shell/Source/shell_cmdhelp.o \
  framework/Shell/Source/shell_cmdhelp.d: \
  ../framework/Shell/Source/shell_cmdhelp.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -18,7 +18,7 @@ framework/Shell/Source/shell_cmdhelp.o \
  ../framework/FunctionLib/FunctionLib.h \
  ../framework/ModuleInfo/ModuleInfo.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

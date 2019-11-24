@@ -1,7 +1,7 @@
 nwk_ip/base/stack_globals/mle_globals.o \
  nwk_ip/base/stack_globals/mle_globals.d: \
  ../nwk_ip/base/stack_globals/mle_globals.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -40,7 +40,7 @@ nwk_ip/base/stack_globals/mle_globals.o \
  ../nwk_ip/core/interface/network_utils.h \
  ../nwk_ip/core/interface/modules/udp.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

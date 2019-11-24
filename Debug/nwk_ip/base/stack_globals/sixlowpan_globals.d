@@ -1,7 +1,7 @@
 nwk_ip/base/stack_globals/sixlowpan_globals.o \
  nwk_ip/base/stack_globals/sixlowpan_globals.d: \
  ../nwk_ip/base/stack_globals/sixlowpan_globals.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -29,7 +29,7 @@ nwk_ip/base/stack_globals/sixlowpan_globals.o \
  ../nwk_ip/core/interface/modules/sixlowpan_cfg.h \
  ../nwk_ip/core/interface/modules/sixlowpan_cfg.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

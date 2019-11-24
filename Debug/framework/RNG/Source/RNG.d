@@ -1,6 +1,6 @@
 framework/RNG/Source/RNG.o framework/RNG/Source/RNG.d: \
  ../framework/RNG/Source/RNG.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -19,7 +19,7 @@ framework/RNG/Source/RNG.o framework/RNG/Source/RNG.d: \
  ../drivers/fsl_common.h ../drivers/fsl_clock.h ../drivers/fsl_common.h \
  ../drivers/fsl_trng.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

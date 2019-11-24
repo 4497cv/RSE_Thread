@@ -1,7 +1,7 @@
 nwk_ip/app/common/app_thread_callbacks.o \
  nwk_ip/app/common/app_thread_callbacks.d: \
  ../nwk_ip/app/common/app_thread_callbacks.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -70,7 +70,7 @@ nwk_ip/app/common/app_thread_callbacks.o \
  ../framework/Panic/Interface/Panic.h \
  ../nwk_ip/core/interface/modules/mle_extended.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

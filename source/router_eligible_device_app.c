@@ -100,6 +100,7 @@ static bool_t mFirstPushButtonPressed = FALSE;
 
 static bool_t mJoiningIsAppInitiated = FALSE;
 
+static uint8_t gTimerCount;
 /*==================================================================================================
 Private prototypes
 ==================================================================================================*/
@@ -122,7 +123,11 @@ static void APP_CoapGenericCallback(coapSessionStatus_t sessionStatus, uint8_t *
 static void APP_CoapLedCb(coapSessionStatus_t sessionStatus, uint8_t *pData, coapSession_t *pSession, uint32_t dataLen);
 static void APP_CoapTempCb(coapSessionStatus_t sessionStatus, uint8_t *pData, coapSession_t *pSession, uint32_t dataLen);
 static void APP_CoapSinkCb(coapSessionStatus_t sessionStatus, uint8_t *pData, coapSession_t *pSession, uint32_t dataLen);
+static void APP_CoapTeam5Cb(coapSessionStatus_t sessionStatus, uint8_t *pData, coapSession_t *pSession, uint32_t dataLen);
 static void App_RestoreLeaderLed(uint8_t *param);
+
+static void App_TimerTeam5Callback(void *param);
+
 #if LARGE_NETWORK
 static void APP_CoapResetToFactoryDefaultsCb(coapSessionStatus_t sessionStatus, uint8_t *pData, coapSession_t *pSession, uint32_t dataLen);
 static void APP_SendResetToFactoryCommand(uint8_t *param);
@@ -139,7 +144,6 @@ const coapUriPath_t gAPP_LED_URI_PATH  =  {SizeOfString(APP_LED_URI_PATH),   (ui
 const coapUriPath_t gAPP_TEMP_URI_PATH =  {SizeOfString(APP_TEMP_URI_PATH),  (uint8_t *) APP_TEMP_URI_PATH};
 const coapUriPath_t gAPP_SINK_URI_PATH =  {SizeOfString(APP_SINK_URI_PATH),  (uint8_t *) APP_SINK_URI_PATH};
 const coapUriPath_t gAPP_TEAM5_URI_PATH = {SizeOfString(APP_TEAM5_URI_PATH), (uint8_t *) APP_TEAM5_URI_PATH};
-
 
 #if LARGE_NETWORK
 const coapUriPath_t gAPP_RESET_URI_PATH = {SizeOfString(APP_RESET_TO_FACTORY_URI_PATH), (uint8_t *)APP_RESET_TO_FACTORY_URI_PATH};
@@ -161,6 +165,7 @@ ipAddr_t gCoapDestAddress;
 
 /* Application timer Id */
 tmrTimerID_t mAppTimerId = gTmrInvalidTimerID_c;
+tmrTimerID_t mAppTimerTeam5 = gTmrInvalidTimerID_c;
 
 #if APP_AUTOSTART
 tmrTimerID_t tmrStartApp = gTmrInvalidTimerID_c;
@@ -496,10 +501,21 @@ static void APP_InitCoapDemo
                                      {APP_CoapResetToFactoryDefaultsCb, (coapUriPath_t *)&gAPP_RESET_URI_PATH},
 #endif
                                      {APP_CoapSinkCb, (coapUriPath_t *)&gAPP_SINK_URI_PATH},
-    								 {APP_TEAM5_URI_PATH, (coapUriPath_t *)&gAPP_TEAM5_URI_PATH}
+    								 {APP_CoapTeam5Cb, (coapUriPath_t *)&gAPP_TEAM5_URI_PATH}
     								};
     /* Register Services in COAP */
     sockaddrStorage_t coapParams = {0};
+    gTimerCount = 0;
+
+    /* Allocate global timer for URI /team5 */
+    mAppTimerTeam5 = TMR_AllocateTimer();
+
+    /* Validate application timer Id */
+    if(mAppTimerTeam5 != gTmrInvalidTimerID_c)
+    {
+        /* Start the application timer. Wait gAppJoinTimeout_c to start the joining procedure */
+        TMR_StartSingleShotTimer(mAppTimerTeam5, gAppJoinTimeout_c, App_TimerTeam5Callback, NULL);
+    }
 
     NWKU_SetSockAddrInfo(&coapParams, NULL, AF_INET6, COAP_DEFAULT_PORT, 0, gIpIfSlp0_c);
 
@@ -524,6 +540,24 @@ static void APP_ThrNwkJoin
     {
         /* User can treat join failure according to their application */
     }
+}
+
+static void App_TimerTeam5Callback
+(
+	void *param
+)
+{
+	if(gTimerCount < 200)
+	{
+		/* increase timer value*/
+		gTimerCount++;
+	}
+	else
+	{
+		/* reset count */
+		gTimerCount = 0;
+	}
+
 }
 
 /*!*************************************************************************************************
@@ -1132,6 +1166,64 @@ static void APP_LocalDataSinkRelease
 
     FLib_MemCpy(&gCoapDestAddress, &defaultDestAddress, sizeof(ipAddr_t));
     (void)pParam;
+}
+
+/*static void APP_CoapTeam5Cb**TODO***/
+static void APP_CoapTeam5Cb
+(
+	coapSessionStatus_t sessionStatus,
+	uint8_t *pData,
+	coapSession_t *pSession,
+	uint32_t dataLen
+)
+{
+
+    char addrStr[INET6_ADDRSTRLEN];
+    uint32_t ackPloadSize = sizeof(gTimerCount);
+
+    ntop(AF_INET6, (ipAddr_t*)&pSession->remoteAddrStorage.ss_addr, addrStr, INET6_ADDRSTRLEN);
+
+    if(gCoapConfirmable_c == pSession->msgType)
+    {
+    	shell_printf("CON instruction received from %s\n\r", addrStr);
+
+    	switch(pSession->code)
+    	{
+			case gCoapGET_c:
+				/* Send ACK with current timer value */
+				COAP_Send(pSession, gCoapMsgTypeAckSuccessContent_c, &gTimerCount, ackPloadSize);
+			break;
+			case gCoapPOST_c:
+				//shell_write("");
+				COAP_Send(pSession, gCoapMsgTypeAckSuccessChanged_c, NULL, 0);
+			break;
+			case gCoapPUT_c:
+				//shell_write("");
+				COAP_Send(pSession, gCoapMsgTypeAckSuccessChanged_c, NULL, 0);
+			break;
+			default:
+			break;
+    	}
+    }
+    else if(gCoapNonConfirmable_c == pSession->msgType)
+    {
+    	shell_printf("NON instruction received from %s\n\r", addrStr);
+
+    	switch(pSession->code)
+    	{
+			case gCoapGET_c:
+				//shell_write("");
+			break;
+			case gCoapPOST_c:
+				//shell_write("");
+			break;
+			case gCoapPUT_c:
+				//shell_write("");
+			break;
+			default:
+			break;
+    	}
+    }
 }
 
 /*!*************************************************************************************************

@@ -1,7 +1,7 @@
 ieee_802.15.4/phy/source/MKW41Z/PhyISR.o \
  ieee_802.15.4/phy/source/MKW41Z/PhyISR.d: \
  ../ieee_802.15.4/phy/source/MKW41Z/PhyISR.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -25,7 +25,7 @@ ieee_802.15.4/phy/source/MKW41Z/PhyISR.o \
  ../framework/XCVR/MKW41Z4/fsl_xcvr_trim.h \
  ../framework/XCVR/MKW41Z4/fsl_xcvr.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

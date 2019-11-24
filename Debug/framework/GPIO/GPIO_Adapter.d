@@ -1,6 +1,6 @@
 framework/GPIO/GPIO_Adapter.o framework/GPIO/GPIO_Adapter.d: \
  ../framework/GPIO/GPIO_Adapter.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -17,7 +17,7 @@ framework/GPIO/GPIO_Adapter.o framework/GPIO/GPIO_Adapter.d: \
  ../framework/GPIO/GPIO_Adapter.h ../board/gpio_pins.h \
  ../framework/GPIO/GPIO_Adapter.h ../framework/FunctionLib/FunctionLib.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

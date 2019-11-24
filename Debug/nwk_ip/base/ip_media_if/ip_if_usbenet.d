@@ -1,7 +1,7 @@
 nwk_ip/base/ip_media_if/ip_if_usbenet.o \
  nwk_ip/base/ip_media_if/ip_if_usbenet.d: \
  ../nwk_ip/base/ip_media_if/ip_if_usbenet.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -22,7 +22,7 @@ nwk_ip/base/ip_media_if/ip_if_usbenet.o \
  ../framework/TimersManager/Interface/TimersManager.h \
  ../nwk_ip/core/interface/modules/ip6.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

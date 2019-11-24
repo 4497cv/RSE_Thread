@@ -1,6 +1,6 @@
 framework/SecLib/SecLib.o framework/SecLib/SecLib.d: \
  ../framework/SecLib/SecLib.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -19,7 +19,7 @@ framework/SecLib/SecLib.o framework/SecLib/SecLib.d: \
  ../framework/Panic/Interface/Panic.h ../drivers/fsl_ltc.h \
  ../drivers/fsl_common.h ../drivers/fsl_clock.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

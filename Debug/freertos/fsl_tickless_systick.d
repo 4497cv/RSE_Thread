@@ -1,6 +1,6 @@
 freertos/fsl_tickless_systick.o freertos/fsl_tickless_systick.d: \
  ../freertos/fsl_tickless_systick.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -12,7 +12,7 @@ freertos/fsl_tickless_systick.o freertos/fsl_tickless_systick.d: \
  ../freertos/mpu_wrappers.h ../freertos/task.h ../freertos/list.h \
  ../freertos/fsl_tickless_generic.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

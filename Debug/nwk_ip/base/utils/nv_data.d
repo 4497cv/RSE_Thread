@@ -1,6 +1,6 @@
 nwk_ip/base/utils/nv_data.o nwk_ip/base/utils/nv_data.d: \
  ../nwk_ip/base/utils/nv_data.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -74,7 +74,7 @@ nwk_ip/base/utils/nv_data.o nwk_ip/base/utils/nv_data.d: \
  ../nwk_ip/core/interface/modules/mle.h \
  ../nwk_ip/base/interface/debug_log.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 

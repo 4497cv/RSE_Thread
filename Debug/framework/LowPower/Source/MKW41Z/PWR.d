@@ -1,7 +1,7 @@
 framework/LowPower/Source/MKW41Z/PWR.o \
  framework/LowPower/Source/MKW41Z/PWR.d: \
  ../framework/LowPower/Source/MKW41Z/PWR.c \
- C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
+ /home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h \
  ../nwk_ip/app/config/app_config.h \
  ../nwk_ip/app/config/app_stack_config.h \
  ../nwk_ip/core/interface/modules/stack_config.h \
@@ -22,7 +22,7 @@ framework/LowPower/Source/MKW41Z/PWR.o \
  ../board/board.h ../drivers/fsl_gpio.h ../drivers/fsl_common.h \
  ../drivers/fsl_clock.h ../board/clock_config.h ../drivers/fsl_common.h
 
-C:/workspace_rse/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
+/home/embedded/Documents/workspace_rse/Thread/frdmkw41z_wireless_examples_thread_router_eligible_device_freertos/source/config.h:
 
 ../nwk_ip/app/config/app_config.h:
 
