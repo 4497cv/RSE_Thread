@@ -126,6 +126,8 @@ static void APP_CoapSinkCb(coapSessionStatus_t sessionStatus, uint8_t *pData, co
 static void APP_CoapTeam5Cb(coapSessionStatus_t sessionStatus, uint8_t *pData, coapSession_t *pSession, uint32_t dataLen);
 static void App_RestoreLeaderLed(uint8_t *param);
 
+void *App_GetCounterData(void);
+
 static void App_TimerTeam5Callback(void *param);
 
 #if LARGE_NETWORK
@@ -507,14 +509,18 @@ static void APP_InitCoapDemo
     sockaddrStorage_t coapParams = {0};
     gTimerCount = 0;
 
+    /* Validate application timer Id */
+    if(mAppTimerTeam5 == gTmrInvalidTimerID_c)
+    {
     /* Allocate global timer for URI /team5 */
     mAppTimerTeam5 = TMR_AllocateTimer();
+    }
 
     /* Validate application timer Id */
     if(mAppTimerTeam5 != gTmrInvalidTimerID_c)
     {
         /* Start the application timer. Wait gAppJoinTimeout_c to start the joining procedure */
-        TMR_StartSingleShotTimer(mAppTimerTeam5, gAppJoinTimeout_c, App_TimerTeam5Callback, NULL);
+        TMR_StartSingleShotTimer(mAppTimerTeam5, 1000, App_TimerTeam5Callback, NULL);
     }
 
     NWKU_SetSockAddrInfo(&coapParams, NULL, AF_INET6, COAP_DEFAULT_PORT, 0, gIpIfSlp0_c);
@@ -547,7 +553,9 @@ static void App_TimerTeam5Callback
 	void *param
 )
 {
-	if(gTimerCount < 200)
+	uint8_t timer_value = gTimerCount;
+
+	if(timer_value < 200)
 	{
 		/* increase timer value*/
 		gTimerCount++;
@@ -555,9 +563,10 @@ static void App_TimerTeam5Callback
 	else
 	{
 		/* reset count */
-		gTimerCount = 0;
+		gTimerCount = (00U);
 	}
 
+	 TMR_StartSingleShotTimer(mAppTimerTeam5, 1000, App_TimerTeam5Callback, NULL);
 }
 
 /*!*************************************************************************************************
@@ -1179,7 +1188,11 @@ static void APP_CoapTeam5Cb
 {
 
     char addrStr[INET6_ADDRSTRLEN];
-    uint32_t ackPloadSize = sizeof(gTimerCount);
+    uint8_t *pTempString = NULL;
+    uint32_t ackPloadSize = 0;
+
+    pTempString = App_GetCounterData();
+    ackPloadSize = strlen((char*)pTempString);
 
     ntop(AF_INET6, (ipAddr_t*)&pSession->remoteAddrStorage.ss_addr, addrStr, INET6_ADDRSTRLEN);
 
@@ -1191,7 +1204,7 @@ static void APP_CoapTeam5Cb
     	{
 			case gCoapGET_c:
 				/* Send ACK with current timer value */
-				COAP_Send(pSession, gCoapMsgTypeAckSuccessContent_c, &gTimerCount, ackPloadSize);
+				COAP_Send(pSession, gCoapMsgTypeAckSuccessContent_c, pTempString, ackPloadSize);
 			break;
 			case gCoapPOST_c:
 				//shell_write("");
@@ -1224,6 +1237,7 @@ static void APP_CoapTeam5Cb
 			break;
     	}
     }
+    MEM_BufferFree(pTempString);
 }
 
 /*!*************************************************************************************************
@@ -1579,6 +1593,31 @@ static void APP_AutoStartCb
 }
 #endif
 
+
+void *App_GetCounterData
+(
+    void
+)
+{
+    uint8_t *pIndex = NULL;
+    uint8_t sTemp[] = "Counter:";
+    uint8_t *counterData = MEM_BufferAlloc(20U);
+
+    if(NULL == counterData)
+    {
+      return counterData;
+    }
+
+    /* Clear data and reset buffers */
+    FLib_MemSet(counterData, 0, 20U);
+
+    /* Compute output */
+    pIndex = counterData;
+    FLib_MemCpy(pIndex, sTemp, SizeOfString(sTemp));
+    pIndex += SizeOfString(sTemp);
+    NWKU_PrintDec((uint8_t) gTimerCount, pIndex, 2, TRUE);
+    return counterData;
+}
 /*==================================================================================================
 Private debug functions
 ==================================================================================================*/
