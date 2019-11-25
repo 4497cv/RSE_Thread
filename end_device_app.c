@@ -705,6 +705,7 @@ static void APP_ReportTemp
     uint8_t *pTempString = App_GetTempDataString();
     uint32_t ackPloadSize;
 
+    /*todo:copy address*/
     if(!IP_IF_IsMyAddr(gIpIfSlp0_c, &gCoapDestAddress))
     {
         pSession = COAP_OpenSession(mAppCoapInstId);
@@ -1207,26 +1208,28 @@ static void APP_RetrieveTimerCounterCb(void* param)
 static void APP_CounterRequest(void)
 {
 	coapSession_t *pSession;
-	uint8_t* pData;
-	uint32_t payload_size = 20U;
+	coapMsgTypesAndCodes_t coapMessageType = gCoapMsgTypeConGet_c;
 	/* todo */
-    pSession = COAP_OpenSession(mAppCoapInstId);
 
-    if(NULL != pSession)
+    if(!IP_IF_IsMyAddr(gIpIfSlp0_c, &gCoapDestAddress))
     {
-    	/* set callback as null */
-        pSession->pCallback = NULL;
-        /* copy router's destination address to the current session */
-        FLib_MemCpy(&pSession->remoteAddrStorage.ss_addr, &gCoapDestAddress, sizeof(ipAddr_t));
-        /* set application path */
-        pSession->pUriPath = (coapUriPath_t *)&gAPP_TEAM5_URI_PATH;
-        /* set message type as confirmable */
-        pSession->msgType = gCoapConfirmable_c;
-        pSession->code = gCoapGET_c;
-    	/* todo: change NULL parameter for con request */
-    	COAP_Send(pSession, gCoapMsgTypeConGet_c, NULL, 0);
+        pSession = COAP_OpenSession(mAppCoapInstId);
+		if(NULL != pSession)
+		{
+			/* copy router's destination address to the current session */
+			FLib_MemCpy(&pSession->remoteAddrStorage.ss_addr, &gCoapDestAddress, sizeof(ipAddr_t));
+			/* set callback as null */
+			pSession->pCallback = NULL;
 
-    	shell_write(pData);
+			/* set application path */
+			pSession->pUriPath = (coapUriPath_t *)&gAPP_TEAM5_URI_PATH;
+			/* set message type as confirmable */
+			pSession->code = gCoapGET_c;
+			pSession->msgType = gCoapConfirmable_c;
+
+			/* todo: change NULL parameter for con request */
+			COAP_Send(pSession, gCoapMsgTypeUseSessionValues_c, NULL, 0);
+		}
     }
 }
 //
