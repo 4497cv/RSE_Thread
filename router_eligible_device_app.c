@@ -1225,7 +1225,7 @@ static void APP_CoapTeam5Cb
     	switch(pSession->code)
     	{
 			case gCoapGET_c:
-				//shell_write("");
+				shell_write("received coap get non confirmable request");
 			break;
 			case gCoapPOST_c:
 				//shell_write("");
