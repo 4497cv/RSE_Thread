@@ -1,5 +1,5 @@
 # ***Third Practice: Tread***
-##### ***Embedded Systems based on Microcontrollers II***
+##### ***Networks for Embedded Systems***
 
 ***Description**: this repository contains the implementation for the **thread** for the FRDM-K64F.*
 
