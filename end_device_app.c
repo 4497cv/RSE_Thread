@@ -134,6 +134,9 @@ bool_t gbRetryInterrupt = TRUE;
 
 /* CoAP instance */
 uint8_t mAppCoapInstId = THR_ALL_FFs8;
+/* CoAP instance */
+uint8_t mAppCounterInstId = THR_ALL_FFs8;
+
 /* Destination address for CoAP commands */
 ipAddr_t gCoapDestAddress;
 
@@ -1200,38 +1203,62 @@ static void APP_CoapSinkCb
 
 static void APP_RetrieveTimerCounterCb(void* param)
 {
-	APP_CounterRequest();
+	//APP_CounterRequest();
 
-	TMR_StartSingleShotTimer(gAppRetrieveCounterTimer, 1000, APP_RetrieveTimerCounterCb, NULL);
+	//TMR_StartSingleShotTimer(gAppRetrieveCounterTimer, 1000, APP_RetrieveTimerCounterCb, NULL);
 }
-
+//gAPP_TEAM5_URI_PATH
 static void APP_CounterRequest(void)
 {
+	/** look on shell ip **/
 	coapSession_t *pSession;
 	coapMsgTypesAndCodes_t coapMessageType = gCoapMsgTypeConGet_c;
-	/* todo */
+	/* todo: check the file shell_ip.c (nwk_ip>base>shell>shell_ip.c) get mesh local address and concatenate a :0
+	 * ex. fda2:2238:b173:d249::ff:fe00:0
+	 * */
+//
+//	char addrStr[INET6_ADDRSTRLEN];
+//
+//	ip6IfAddrData_t *pIp6AddrData = NULL;
+//	ip4IfAddrData_t *pIp4AddrData = NULL;
+//	thrPrefixAttr_t thrMLPrefix;
+//
+//    /* Get IPv4 addresses for an interface */
+//    pIp6AddrData = IP_IF_GetAddrByIf6(ifId, 0, FALSE);
+//
+//    if(pIp6AddrData && (pIp6AddrData->ipIfId != gIpIfUndef_c))
+//    {
+//
+//    	ntop(AF_INET6, &pIp6AddrData->ip6Addr, addrStr, INET6_ADDRSTRLEN);
+//
+//        (void)THR_GetAttr(threadInstanceID, gNwkAttrId_MLPrefix_c, 0, NULL, (uint8_t*)&(thrMLPrefix));
+//
+//        if(FLib_MemCmp(&pIp6AddrData->ip6Addr, &thrMLPrefix.prefix, 8))
+//        {
+//        	shell_printf("\n\r\Mesh local address (LL16): %s", addrStr);
+//        }
 
-    if(!IP_IF_IsMyAddr(gIpIfSlp0_c, &gCoapDestAddress))
-    {
+      if(!IP_IF_IsMyAddr(gIpIfSlp0_c, &gCoapDestAddress))
+      {
         pSession = COAP_OpenSession(mAppCoapInstId);
-		if(NULL != pSession)
-		{
-			/* copy router's destination address to the current session */
-			FLib_MemCpy(&pSession->remoteAddrStorage.ss_addr, &gCoapDestAddress, sizeof(ipAddr_t));
-			/* set callback as null */
-			pSession->pCallback = NULL;
 
-			/* set application path */
-			pSession->pUriPath = (coapUriPath_t *)&gAPP_TEAM5_URI_PATH;
-			/* set message type as confirmable */
-			pSession->code = gCoapGET_c;
-			pSession->msgType = gCoapConfirmable_c;
+        if(NULL != pSession)
+        {
+            pSession->pCallback = NULL;
+            FLib_MemCpy(&pSession->remoteAddrStorage.ss_addr, &gCoapDestAddress, sizeof(ipAddr_t));
+            pSession->pUriPath = (coapUriPath_t *)&gAPP_TEAM5_URI_PATH;
 
-			/* todo: change NULL parameter for con request */
-			COAP_Send(pSession, gCoapMsgTypeUseSessionValues_c, NULL, 0);
-		}
-    }
+            if(!IP6_IsMulticastAddr(&gCoapDestAddress))
+            {
+                coapMessageType = gCoapMsgTypeConGet_c;
+                COAP_SetCallback(pSession, APP_CoapGenericCallback);
+            }
+
+            COAP_Send(pSession, coapMessageType, NULL, 10);
+        }
+      }
 }
+
 //
 //coapSession_t *pSession = NULL;
 ///* Get Temperature */
