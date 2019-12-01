@@ -17,7 +17,8 @@ Include Files
 /* General Includes */
 #include "EmbeddedTypes.h"
 #include <string.h>
-
+#include "ip6.h"
+#include "ip4.h"
 /* FSL Framework */
 #include "shell.h"
 #include "Keyboard.h"
@@ -43,6 +44,7 @@ Include Files
 #include "app_temp_sensor.h"
 #include "coap.h"
 #include "app_socket_utils.h"
+#include "ip_if_management.h"
 #if THR_ENABLE_EVENT_MONITORING
 #include "app_event_monitoring.h"
 #endif
@@ -77,6 +79,7 @@ Private macros
 #define APP_DEFAULT_DEST_ADDR                   in6addr_realmlocal_allthreadnodes
 
 #define APP_SW_WAKE_UP_TIMEOUT                  5000 /* miliseconds */
+#define IP_IP4_ENABLE 1
 /*==================================================================================================
 Private type definitions
 ==================================================================================================*/
@@ -87,6 +90,7 @@ Private global variables declarations
 static instanceId_t mThrInstanceId = gInvalidInstanceId_c;    /*!< Thread Instance ID */
 
 static bool_t mJoiningIsAppInitiated = FALSE;
+static uint8_t  mCoapInstId = THR_ALL_FFs8;
 
 /*==================================================================================================
 Private prototypes
@@ -139,6 +143,7 @@ uint8_t mAppCounterInstId = THR_ALL_FFs8;
 
 /* Destination address for CoAP commands */
 ipAddr_t gCoapDestAddress;
+ipAddr_t gCoapSrcLocalMeshAddress;
 
 /* TIMERS */
 /* Timer used to keep the device in Up state for an amount of time */
@@ -668,6 +673,7 @@ static void APP_CoapGenericCallback
     uint32_t dataLen
 )
 {
+	char remoteAddrStr[INET6_ADDRSTRLEN]; //@JC
     /* If no ACK was received, try again */
     if(sessionStatus == gCoapFailure_c)
     {
@@ -680,6 +686,11 @@ static void APP_CoapGenericCallback
     /* Process data, if any, for sessionStatus != gCoapFailure_c */
     else
     {
+    	ntop(AF_INET6, (ipAddr_t*)&pSession->remoteAddrStorage.ss_addr, remoteAddrStr, INET6_ADDRSTRLEN);
+    	/* coap rsp from <IP addr>: <ACK> <rspcode: X.XX> <payload ASCII> */
+    	shell_printf("coap rsp from ");
+    	shell_printf(remoteAddrStr);
+
         if (pSession->msgType == gCoapNonConfirmable_c)
         {
             //Process data
@@ -687,6 +698,17 @@ static void APP_CoapGenericCallback
         else if ((pSession->msgType == gCoapConfirmable_c) && (sessionStatus == gCoapSuccess_c))
         {
             //Process data
+        }
+        if (gCoapAcknowledgement_c == pSession->msgType)
+        {
+            shell_printf(" ACK ");
+        }
+        /* Check if payload is ascii */
+        if(0 != dataLen)
+        {
+        	shell_write(" ");
+        	shell_writeN((char*)pData, dataLen);
+			shell_refresh();
         }
     }
 }
@@ -1203,95 +1225,64 @@ static void APP_CoapSinkCb
 
 static void APP_RetrieveTimerCounterCb(void* param)
 {
-	//APP_CounterRequest();
+	NWKU_SendMsg(APP_CounterRequest, NULL, mpAppThreadMsgQueue);
 
-	//TMR_StartSingleShotTimer(gAppRetrieveCounterTimer, 1000, APP_RetrieveTimerCounterCb, NULL);
+	TMR_StartSingleShotTimer(gAppRetrieveCounterTimer, 1000, APP_RetrieveTimerCounterCb, NULL);
 }
-//gAPP_TEAM5_URI_PATH
+
 static void APP_CounterRequest(void)
 {
 	/** look on shell ip **/
-	coapSession_t *pSession;
-	coapMsgTypesAndCodes_t coapMessageType = gCoapMsgTypeConGet_c;
-	/* todo: check the file shell_ip.c (nwk_ip>base>shell>shell_ip.c) get mesh local address and concatenate a :0
-	 * ex. fda2:2238:b173:d249::ff:fe00:0
-	 * */
-//
-//	char addrStr[INET6_ADDRSTRLEN];
-//
-//	ip6IfAddrData_t *pIp6AddrData = NULL;
-//	ip4IfAddrData_t *pIp4AddrData = NULL;
-//	thrPrefixAttr_t thrMLPrefix;
-//
-//    /* Get IPv4 addresses for an interface */
-//    pIp6AddrData = IP_IF_GetAddrByIf6(ifId, 0, FALSE);
-//
-//    if(pIp6AddrData && (pIp6AddrData->ipIfId != gIpIfUndef_c))
-//    {
-//
-//    	ntop(AF_INET6, &pIp6AddrData->ip6Addr, addrStr, INET6_ADDRSTRLEN);
-//
-//        (void)THR_GetAttr(threadInstanceID, gNwkAttrId_MLPrefix_c, 0, NULL, (uint8_t*)&(thrMLPrefix));
-//
-//        if(FLib_MemCmp(&pIp6AddrData->ip6Addr, &thrMLPrefix.prefix, 8))
-//        {
-//        	shell_printf("\n\r\Mesh local address (LL16): %s", addrStr);
-//        }
+	coapSession_t *pSession = NULL;
+	uint8_t *pCoapPayload = NULL;
+	uint32_t coapPayloadSize = 0;
+	char *MLAptr;
+	char MeshLocaladdrStr[INET6_ADDRSTRLEN];
+	ipAddr_t *pMeshAddr;
+	uint8_t i;
+	sockaddrStorage_t coapParams = {0};
 
-      if(!IP_IF_IsMyAddr(gIpIfSlp0_c, &gCoapDestAddress))
-      {
-        pSession = COAP_OpenSession(mAppCoapInstId);
+	NWKU_SetSockAddrInfo(&coapParams, NULL, AF_INET6, COAP_DEFAULT_PORT, 0, gIpIfSlp0_c);
 
-        if(NULL != pSession)
-        {
-            pSession->pCallback = NULL;
-            FLib_MemCpy(&pSession->remoteAddrStorage.ss_addr, &gCoapDestAddress, sizeof(ipAddr_t));
-            pSession->pUriPath = (coapUriPath_t *)&gAPP_TEAM5_URI_PATH;
+	if(THR_ALL_FFs8 == mCoapInstId)
+	{
+		mCoapInstId = COAP_CreateInstance(NULL, &coapParams, NULL, 0);
+	}
 
-            if(!IP6_IsMulticastAddr(&gCoapDestAddress))
-            {
-                coapMessageType = gCoapMsgTypeConGet_c;
-                COAP_SetCallback(pSession, APP_CoapGenericCallback);
-            }
+	pSession = COAP_OpenSession(mCoapInstId);
+	//COAP_AddOptionToList(pSession, COAP_URI_PATH_OPTION, APP_TEAM5_URI_PATH, SizeOfString(APP_TEAM5_URI_PATH));
 
-            COAP_Send(pSession, coapMessageType, NULL, 10);
-        }
-      }
+	if(NULL != pSession)
+	{
+		MLAptr = get_mesh_local_address();
+
+		for(i=0; i < INET6_ADDRSTRLEN; i++)
+		{
+			if(i == 29)
+			{
+				MeshLocaladdrStr[i] = 48;
+			}
+			else
+			{
+				MeshLocaladdrStr[i] = MLAptr[i];
+			}
+		}
+
+		if(pton(AF_INET6, MeshLocaladdrStr, (ipAddr_t *)&pSession->remoteAddrStorage.ss_addr) == -1)
+		{
+			shell_printf("Address not valid \n\r");
+		}
+
+		pSession->pCallback = NULL;
+		pSession->pUriPath = (coapUriPath_t *) &gAPP_TEAM5_URI_PATH;
+		pSession->code = gCoapGET_c;
+		pSession->msgType = gCoapConfirmable_c;
+
+		COAP_SetCallback(pSession, APP_CoapGenericCallback);
+		COAP_Send(pSession, gCoapMsgTypeUseSessionValues_c, pCoapPayload, coapPayloadSize);
+	}
 }
 
-//
-//coapSession_t *pSession = NULL;
-///* Get Temperature */
-//uint8_t *pTempString = App_GetTempDataString();
-//uint32_t ackPloadSize;
-//
-//if(!IP_IF_IsMyAddr(gIpIfSlp0_c, &gCoapDestAddress))
-//{
-//    pSession = COAP_OpenSession(mAppCoapInstId);
-//
-//    if(NULL != pSession)
-//    {
-//        coapMsgTypesAndCodes_t coapMessageType = gCoapMsgTypeNonPost_c;
-//
-//        pSession->pCallback = NULL;
-//        FLib_MemCpy(&pSession->remoteAddrStorage.ss_addr, &gCoapDestAddress, sizeof(ipAddr_t));
-//        ackPloadSize = strlen((char *)pTempString);
-//        pSession->pUriPath = (coapUriPath_t *)&gAPP_TEMP_URI_PATH;
-//
-//        if(!IP6_IsMulticastAddr(&gCoapDestAddress))
-//        {
-//            coapMessageType = gCoapMsgTypeConPost_c;
-//            COAP_SetCallback(pSession, APP_CoapGenericCallback);
-//        }
-//
-//        COAP_Send(pSession, coapMessageType, pTempString, ackPloadSize);
-//    }
-//}
-///* Print temperature in shell */
-//shell_write("\r");
-//shell_write((char *)pTempString);
-//shell_refresh();
-//MEM_BufferFree(pTempString);
 
 /*==================================================================================================
 Private debug functions
